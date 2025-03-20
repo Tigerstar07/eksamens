@@ -1,1 +1,3 @@
 # eksamens
+
+SI IR MAJASLAPA PRIEKS EKSAMENA
