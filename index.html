@@ -1,85 +1,95 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EKSAMENS</title>
-    <link rel="stylesheet" href="src/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EKSAMENS</title>
+  <link rel="stylesheet" href="src/styles.css" />
 </head>
 <body>
- <nav class="cooler-navbar">
-    <div class="nav-left">
-        <img src="src/img/folder.png" alt="logo" class="nav-logo">
-        <span class="nav-title"> TO-DO list</span>
+
+  <!-- Navbar -->
+  <nav class="modern-navbar">
+    <div class="navbar-left">
+      <img src="src/img/folder.png" alt="logo" class="nav-icon" />
+      <a href="#home" class="nav-link active">Home</a>
     </div>
-    <ul class="nav-links">
-        <li></li>
- </nav>
-    
-    <section id="home" class="hero">
-        <div class="hero-content">
-            
-            <h1>Organize Your Tasks Efficiently</h1>
-            <p>Stay productive and never miss a task with our powerful to-do list tool.</p>
-        </div>
-    </section>
-    
-    <!-- Music Gallery Section -->
-    <section id="music-gallery">
-        <div class="music-content">
-            <h1>My Favourite Songs</h1>
-            <p class="music-text">Here are some of my favourite songs to listen to while i do my every day TO-DO lists!</p>
-        </div>
-        <div class="gallery">
-            <!-- Card 1 -->
-            <div class="card">
-                <img src="src/img/the dinner.jpg" alt="Song 1" class="card-img">
-                <div class="card-overlay">
-                    <p>The Dinner</p>
-                    <a href="https://www.youtube.com/watch?v=gDVw1l6QDOg" target="_blank">Listen Now</a>
-                </div>
-            </div>
-            <!-- Card 2 -->
-            <div class="card">
-                <img src="src/img/Timezone.jpg" alt="Song 2" class="card-img">
-                <div class="card-overlay">
-                    <p>Timezone</p>
-                    <a href="https://www.youtube.com/watch?v=JlOZR5OwS-8" target="_blank">Listen Now</a>
-                </div>
-            </div>
-            <!-- Card 3 -->
-            <div class="card">
-                <img src="src/img/Beggin.jpg" alt="Song 3" class="card-img">
-                <div class="card-overlay">
-                    <p>Beggin'</p>
-                    <a href="https://www.youtube.com/watch?v=Qdkt3I5-FG4" target="_blank">Listen Now</a>
-                </div>
-            </div>
-            <!-- Card 4 -->
-            <div class="card">
-                <img src="src/img/five.jpg" alt="Song 4" class="card-img">
-                <div class="card-overlay">
-                    <p>505</p>
-                    <a href="https://www.youtube.com/watch?v=qU9mHegkTc4" target="_blank">Listen Now</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="navbar-center">
+      <a href="#music-gallery" class="nav-link">Music</a>
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <div class="navbar-right">
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-    <section id="services">
-        <div class="services-content">
-            <h1>Our Services</h1>
-            <p>This is some random text</p>
-        </div>
-    </section>
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1>Organize Your Tasks Efficiently</h1>
+      <p>Stay productive and never miss a task with our powerful to-do list tool.</p>
+    </div>
+  </section>
 
-    <section id="contact">
-        <div class="contact-content">
-            <h1>Contact Us</h1>
-            <p>This is some random text</p>
+  <!-- Music Gallery -->
+  <section id="music-gallery">
+    <div class="music-content">
+      <h1>My Favourite Songs</h1>
+      <p class="music-text">Here are some of my favourite songs to listen to while I do my every day TO-DO lists!</p>
+    </div>
+    <div class="gallery">
+      <div class="card">
+        <img src="src/img/the dinner.jpg" alt="Song 1" class="card-img" />
+        <div class="card-overlay">
+          <p>The Dinner</p>
+          <a href="https://www.youtube.com/watch?v=gDVw1l6QDOg" target="_blank">Listen Now</a>
         </div>
-    </section>
-    
-    <script src="script.js"></script>
+      </div>
+      <div class="card">
+        <img src="src/img/Timezone.jpg" alt="Song 2" class="card-img" />
+        <div class="card-overlay">
+          <p>Timezone</p>
+          <a href="https://www.youtube.com/watch?v=JlOZR5OwS-8" target="_blank">Listen Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="src/img/Beggin.jpg" alt="Song 3" class="card-img" />
+        <div class="card-overlay">
+          <p>Beggin'</p>
+          <a href="https://www.youtube.com/watch?v=Qdkt3I5-FG4" target="_blank">Listen Now</a>
+        </div>
+      </div>
+      <div class="card">
+        <img src="src/img/five.jpg" alt="Song 4" class="card-img" />
+        <div class="card-overlay">
+          <p>505</p>
+          <a href="https://www.youtube.com/watch?v=qU9mHegkTc4" target="_blank">Listen Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="services-content">
+      <h1>Our Services</h1>
+      <p>This is some random text</p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact-content">
+      <h1>Contact Us</h1>
+      <p>This is some random text</p>
+    </div>
+  </section>
+
+  <script src="src/script.js"></script>
 </body>
 </html>
