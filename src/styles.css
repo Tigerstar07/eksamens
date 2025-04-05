@@ -72,8 +72,33 @@ body {
 #music-gallery {
     padding: 50px;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
+/* Title and Description */
+.music-content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.music-content h1 {
+    font-size: 36px;
+    color: #f1c40f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.music-text {
+    font-size: 18px;
+    color: white;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Gallery */
 .gallery {
     display: flex;
     justify-content: center;
@@ -124,6 +149,10 @@ body {
     text-align: center;
     border-radius: 15px;
 }
+.card-overlay a{
+    text-decoration: none;
+    color: #f1c40f;
+}
 
 .card:hover .card-img {
     opacity: 0.3;
@@ -133,23 +162,8 @@ body {
     opacity: 1;
 }
 
-/* Text Animation */
-.card-overlay p {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 15px;
-    animation: fadeIn 1s ease-in-out;
-}
-
-.card-overlay a {
-    color: #f1c40f;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-.card-overlay a:hover {
-    color: white;
+.hero-background {
+    height: 100vh;
 }
 
 /* Fade-in Animation for Text */
@@ -173,35 +187,30 @@ section {
     text-align: center;
     width: 100%;
     color: white;
-    background-size: 400% 400%;
-    animation: subtleGradientShift 60s infinite alternate ease-in-out;
 }
 
-@keyframes subtleGradientShift {
-    0% {
-        background-position: 0% 50%;
-    }
-    25% {
-        background-position: 25% 50%;
-    }
-    50% {
-        background-position: 50% 50%;
-    }
-    75% {
-        background-position: 75% 50%;
-    }
-    100% {
-        background-position: 100% 50%;
-    }
-}
-
-/* Gradient Backgrounds */
 #home {
-    background: linear-gradient(270deg, #1a1a3d, #2a2a5a, #3b3b75, #1a1a3d);
+    background:
+        linear-gradient(to right, #0A0A2A 40%, rgba(10,10,42,0) 70%),
+        url('./img/heropart2.png') no-repeat right center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right center;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    text-align: left;
+    color: white;
+    padding-left: 50px;
+    box-sizing: border-box;
 }
 
-#about {
-    background: linear-gradient(270deg, #2a2a5a, #3b3b75, #4a4a90, #2a2a5a);
+
+.hero-content {
+    max-width: 500px;
 }
 
 #services {
