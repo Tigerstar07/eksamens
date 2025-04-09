@@ -201,7 +201,7 @@
   }
   
   /* Other Sections */
-  #services, #contact {
+  #services, #dowanload {
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -210,12 +210,12 @@
   }
   
   #services {
-    background: linear-gradient(270deg, #3b3b75, #4a4a90, #5a5aaa, #3b3b75);
-  }
-  
-  #contact {
-    background: linear-gradient(270deg, #4a4a90, #5a5aaa, #6b6bc5, #4a4a90);
-  }
+    background: linear-gradient(270deg, #1a1a40, #2a2a55, #3a3a70, #1a1a40); /* Darker shades of blue/purple */
+}
+
+#dowwnload {
+    background: linear-gradient(270deg, #2a2a55, #3a3a70, #4a4a85, #2a2a55); /* Slightly lighter gradient */
+}
   
   section{
     height: 100vh;
@@ -224,4 +224,56 @@
     align-items: center;
     text-align: center;
     color: wheat;
+  }
+
+  footer{
+    background-color: #0a0a2a;
+    padding: 20px;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .footer-content{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: white;
+  }
+  .social-icons a{
+    color: #f1c40f;
+    margin: 0 10px;
+    font-size: 20px;
+    transition: color 0.3 s ease;
+  }
+  .social-icons a:hover{
+    color: #ffffff;
+  }
+
+
+
+  /* RESPOSIVEFOR PHONE AND SHIT */
+  @media screen and (max-width: 768px) {
+    .modern-navbar {
+      flex-direction: column;
+      gap: 10px;
+      padding: 20px;
+      width: 90%;
+    }
+
+    .navbar-center{
+      flex-direction: column;
+      align-items: center;
+      gap: 10px
+    }
+    .hero{
+      flex-direction: column;
+      padding: 40px 20px;
+      background-position: center;
+      background-size: cover;
+      text-align: center;
+    }
+    .hero-content{
+      max-width: 10%;
+    }
   }
