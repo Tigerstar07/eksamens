@@ -1,4 +1,3 @@
-/* General Reset */
 * {
   margin: 0;
   padding: 0;
@@ -7,22 +6,22 @@
 }
 
 html {
-  scroll-behavior: smooth; /* Enables smooth scrolling */
+  scroll-behavior: smooth;
 }
 
 body {
   background: #0a0a2a;
   color: white;
   padding-top: 100px;
+  font-size: 18px; /* Readable default size for the body */
 }
 
-/* Navbar */
 .modern-navbar {
   position: fixed;
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(to right, rgba(10, 10, 42, 0.8), rgba(0, 0, 0, 0.8)); /* Gradient background */
+  background: linear-gradient(to right, rgba(10, 10, 42, 0.8), rgba(0, 0, 0, 0.8));
   border: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
   padding: 12px 30px;
@@ -68,11 +67,13 @@ body {
   color: #f1c40f;
 }
 
+/* Hamburger basic style */
 .hamburger {
   display: flex;
   flex-direction: column;
   gap: 4px;
   cursor: pointer;
+  z-index: 1000;
 }
 
 .hamburger span {
@@ -81,13 +82,65 @@ body {
   width: 18px;
   background-color: white;
   border-radius: 2px;
+  transition: all 0.3s ease;
 }
 
-/* Hero Section */
+/* Mobile-specific nav behavior */
+@media screen and (max-width: 768px) {
+  .modern-navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    width: 90%;
+  }
+
+  .navbar-center {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    transition: max-height 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .navbar-center.show {
+    display: flex;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+
+  .hamburger.active {
+    transform: rotate(45deg); /* Optional: add a smooth rotate effect */
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(4px, 4px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(4px, -4px);
+}
+
 .hero {
   height: 100vh;
   background: linear-gradient(to right, #0a0a2a 40%, rgba(10, 10, 42, 0) 70%),
-      url('./img/heropart2.png') no-repeat right center;
+    url('./img/heropart2.png') no-repeat right center;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: right top;
@@ -117,7 +170,6 @@ body {
   background: #6366f1;
 }
 
-/* Music Gallery Section */
 #music-gallery {
   padding: 50px;
   text-align: center;
@@ -201,9 +253,8 @@ body {
   color: #f1c40f;
 }
 
-/* Other Sections */
 #services {
-  background: linear-gradient(270deg, #1a1a40, #2a2a55, #3a3a70, #1a1a40); /* Darker shades of blue/purple */
+  background: linear-gradient(270deg, #1a1a40, #2a2a55, #3a3a70, #1a1a40);
   height: 100vh;
   display: flex;
   justify-content: center;
@@ -212,12 +263,69 @@ body {
 }
 
 #contact {
-  background: linear-gradient(270deg, #2a2a55, #3a3a70, #4a4a85, #2a2a55); /* Slightly lighter gradient */
+  background: linear-gradient(270deg, #2a2a55, #3a3a70, #4a4a85, #2a2a55);
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+#Par_Sistēmu {
+  background: linear-gradient(135deg, #1a1a40, #2a2a55); /* Soft gradient background */
+  padding: 50px 20px;
+  color: white;
+}
+
+.Par_Sistēmu-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.Par_Sistēmu-content h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #f1c40f; /* Bright highlight color */
+}
+
+.Par_Sistēmu-content p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #dcdcdc; /* Softer text color for better readability */
+  margin-bottom: 20px;
+}
+
+.Par_Sistēmu-content ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-bottom: 20px;
+}
+
+.Par_Sistēmu-content ul li {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.Par_Sistēmu-content ul li strong {
+  color: #f1c40f; /* Highlighting important text */
+}
+
+a.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #3498db;
+  color: white;
+  font-size: 18px;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+a.btn:hover {
+  background-color: #2980b9;
 }
 
 section {
@@ -229,7 +337,6 @@ section {
   color: wheat;
 }
 
-/* Footer */
 footer {
   background-color: #0a0a2a;
   padding: 20px;
@@ -256,30 +363,130 @@ footer {
   color: #ffffff;
 }
 
-/* Responsive Design */
 @media screen and (max-width: 768px) {
   .modern-navbar {
-      flex-direction: column;
-      gap: 10px;
-      padding: 20px;
-      width: 90%;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    width: 90%;
   }
 
   .navbar-center {
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
   }
 
   .hero {
-      flex-direction: column;
-      padding: 40px 20px;
-      background-position: center;
-      background-size: cover;
-      text-align: center;
+    flex-direction: column;
+    padding: 40px 20px;
+    background-position: center;
+    background-size: cover;
+    text-align: center;
   }
 
   .hero-content {
-      max-width: 90%;
+    max-width: 90%;
+  }
+
+  .Par_Sistēmu-content h1 {
+    font-size: 28px;
+  }
+
+  .Par_Sistēmu-content p {
+    font-size: 16px;
+  }
+
+  .Par_Sistēmu-content ul li {
+    font-size: 16px;
+  }
+
+  a.btn {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 20px;
+    background-position: center;
+    background-size: cover;
+    height: auto;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.2;
+    word-break: break-word;
+  }
+
+  .hero p {
+    font-size: 16px;
+    line-height: 1.4;
+  }
+
+  #music-gallery .music-content h1 {
+    font-size: 28px;
+  }
+
+  #music-gallery .music-text {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+
+  .card {
+    width: 90%;
+    height: auto;
+  }
+
+  .card-img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    aspect-ratio: 3 / 4;
+  }
+
+  .modern-navbar {
+    flex-direction: column;
+    width: 95%;
+    padding: 10px;
+    gap: 10px;
+  }
+
+  .navbar-center {
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+  }
+
+  section {
+    flex-direction: column;
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .Par_Sistēmu-content h1,
+  .contact-content h1 {
+    font-size: 26px;
+  }
+
+  .Par_Sistēmu-content p,
+  .contact-content p {
+    font-size: 16px;
+  }
+
+  .footer-content {
+    font-size: 14px;
+    padding: 10px;
   }
 }
